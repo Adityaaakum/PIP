@@ -1,0 +1,22 @@
+package com.practice;
+
+class TestDaemonThread2 extends Thread{  
+	 public void run(){  
+	  System.out.println("Name: "+Thread.currentThread().getName());  
+	  System.out.println("Daemon: "+Thread.currentThread().isDaemon());  
+	 }  
+	  
+	 public static void main(String[] args){  
+	  TestDaemonThread2 t1=new TestDaemonThread2();  
+	  TestDaemonThread2 t2=new TestDaemonThread2();  
+	try {  t1.start();  
+	  t1.setDaemon(true);//will throw exception here  
+	  t2.start();  }
+	catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("Exception");
+	}
+	System.out.println("End");
+	 }  
+
+}
